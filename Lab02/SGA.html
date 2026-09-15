@@ -8,7 +8,7 @@
   <body>
     <header class="navegacion">
       <h1>Sistema de Gestion Academica</h1>
-      <nav class="navegacion">
+      <nav>
         <a href="">Inicio</a>
         <a href="">Admisiones</a>
         <a href="">Ofertas Academicas</a>
@@ -18,10 +18,69 @@
       </nav>
     </header>
     <main>
-      <h1>FORMULARIO DE REGISTRO PARA NUEVOS INGRESANTES</h1>
+      <h1>Registro de Estudiantes Nuevos</h1>
       <form action="/registrar" method="POST">
+        <legend>FORMULARIO DE REGISTRO PARA NUEVOS INGRESANTES</legend>
         <fieldset>
           <legend>Informacion Personal</legend>
+
+          <div class="campo">
+            <label for="nombre-completos">Nombres Completos:</label><br />
+            <input
+              type="text"
+              id="nombre-completos"
+              name="nombre-completos"
+              required />
+          </div>
+
+          <div class="campo">
+            <label for="apellidos">Apellidos Completos:</label><br />
+            <input type="text" id="apellidos" name="apellidos" required />
+          </div>
+
+          <div class="campo">
+            <label for="documento">Tipo de documento</label><br />
+            <select id="documento" name="documento" required>
+              <option value="">Seleccione...</option>
+              <option value="dni">DNI</option>
+              <option value="CE">Carné de Extranjeria</option>
+              <option value="pasaporte">Pasaporte</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="numero-documento">Número de documento:</label><br />
+            <input
+              type="text"
+              id="numero-documento"
+              name="numero-documento"
+              required />
+          </div>
+
+          <div class="campo">
+            <label for="fecha-nacimiento">Fecha de nacimiento:</label><br />
+            <input
+              type="date"
+              id="fecha-nacimiento"
+              name="fecha-nacimiento"
+              required />
+          </div>
+
+          <div class="campo">
+            <label for="genero">Género:</label><br />
+            <select id="genero" name="genero" required>
+              <option value="">Seleccione...</option>
+              <option value="masculino">DNI</option>
+              <option value="femenino">Carné de Extranjeria</option>
+              <option value="otro">Otro</option>
+              <option value="no-decirlo">Prefiero no decirlo</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="nacionalidad">Nacionalidad</label><br />
+            <input type="text" name="nacionalidad" id="nacionalidad" required />
+          </div>
         </fieldset>
         <fieldset>
           <legend>Informacion de Contacto</legend>
