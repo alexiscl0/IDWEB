@@ -121,7 +121,48 @@
         </fieldset>
         <fieldset>
           <legend>Programa Academico</legend>
+
+          <div class="campo">
+            <label for="facultad">Facultad:</label><br />
+            <select name="facultad" id="facultad" required>
+              <option value="">Seleccione..</option>
+              <option value="ingenieria">Ingenieria</option>
+              <option value="biomedicas">Biomedicas</option>
+              <option value="sociales">Sociales</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="carrera">Carrera:</label><br />
+            <select name="carrera" id="carrera" required>
+              <option value="">Seleccione...</option>
+              <option value="ingenieria-sistemas">
+                Ingenieria de Sistemas
+              </option>
+              <option value="ingenieria-industrial">
+                Ingeniería Industrial
+              </option>
+              <option value="ingenieria-civil">Ingeniería Civil</option>
+              <option value="ingenieria-electronica">
+                Ingeniería Electrónica
+              </option>
+              <option value="ingenieria-mecanica">Ingeniería Mecánica</option>
+              <option value="administracion">Administración</option>
+              <option value="contabilidad">Contabilidad</option>
+              <option value="medicina">Medicina</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="periodo-academico">Periodo Academico:</label><br />
+            <input
+              type="text"
+              name="periodo-academico"
+              id="periodo-academico"
+              required />
+          </div>
         </fieldset>
+        <button type="submit">Enviar</button>
       </form>
     </main>
   </body>
