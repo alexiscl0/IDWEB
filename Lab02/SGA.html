@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Style.css" />
     <title>SGA</title>
   </head>
   <body>
-    <header class="navegacion">
+    <header>
       <h1>Sistema de Gestion Academica</h1>
       <nav>
         <a href="">Inicio</a>
@@ -66,20 +67,26 @@
               required />
           </div>
 
-          <div class="campo">
-            <label for="genero">Género:</label><br />
-            <select id="genero" name="genero" required>
-              <option value="">Seleccione...</option>
-              <option value="masculino">DNI</option>
-              <option value="femenino">Carné de Extranjeria</option>
-              <option value="otro">Otro</option>
-              <option value="no-decirlo">Prefiero no decirlo</option>
-            </select>
-          </div>
+          <div class="doble-campo">
+            <div class="campo">
+              <label for="genero">Género:</label><br />
+              <select id="genero" name="genero" required>
+                <option value="">Seleccione...</option>
+                <option value="masculino">DNI</option>
+                <option value="femenino">Carné de Extranjeria</option>
+                <option value="otro">Otro</option>
+                <option value="no-decirlo">Prefiero no decirlo</option>
+              </select>
+            </div>
 
-          <div class="campo">
-            <label for="nacionalidad">Nacionalidad</label><br />
-            <input type="text" name="nacionalidad" id="nacionalidad" required />
+            <div class="campo">
+              <label for="nacionalidad">Nacionalidad</label><br />
+              <input
+                type="text"
+                name="nacionalidad"
+                id="nacionalidad"
+                required />
+            </div>
           </div>
         </fieldset>
         <fieldset>
