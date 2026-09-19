@@ -105,3 +105,14 @@ form fieldset:nth-of-type(3) {
     display:grid;
     grid-template-columns: repeat(3,1fr);
 }
+
+footer{
+    grid-area: footer;
+    background: black;
+    color: white;
+    align-content:center ;
+}
+
+footer p{
+    text-align: center;
+}
