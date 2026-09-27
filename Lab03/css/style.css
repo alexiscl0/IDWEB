@@ -21,3 +21,21 @@
     height: auto;
 }
 
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+    }
+}
+
+.catalogo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 0 20px
+}
+
+@media (max-width: 768px) {
+    .catalogo {
+        grid-template-columns: repeat(1, minmax(250px, 1fr));
+    }
+}
