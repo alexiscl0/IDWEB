@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tareas</title>
+  </head>
+  <body>
+    <div class="hero">
+      <p class="hero-title">Gestion de Tareas Academicas</p>
+      <form action="">
+        <fieldset>
+          <legend>Agregar nueva Tarea</legend>
+          <label for="titulo">Titulo:</label>
+          <input type="text" id="titulo" name="titulo" required /><br /><br />
+
+          <label for="curso">Curso:</label>
+          <input type="text" id="curso" name="curso" required /><br /><br />
+
+          <label for="fecha">Fecha de Entrega:</label>
+          <input type="date" id="fecha" name="fecha" required /><br /><br />
+
+          <input type="submit" value="Registrarse" />
+        </fieldset>
+      </form>
+      <div class="alertas"></div>
+      <div class="estado">
+        <button id="btnTodos">Todos</button>
+        <button id="btnPendientes">Pendientes</button>
+        <button id="btnCompletadas">Completadas</button>
+      </div>
+    </div>
+  </body>
+</html>
