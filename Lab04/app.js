@@ -1,23 +1,40 @@
+// Variables para los botones de filtro
+const btnTodos = document.querySelector(".btnTodos");
+const btnPendientes = document.querySelector(".btnPendientes");
+const btnCompletadas = document.querySelector(".btnCompletadas");
 
-let tareas = [];
+let filtroActual = "todos";
 
-const formulario = document.getElementById("formTarea");
-const titulo = document.getElementById("titulo");
-const curso = document.getElementById("curso");
-const fecha = document.getElementById("fecha");
-const alertas = document.querySelector(".alertas");
+function activarFiltro(boton) {
 
-// Evento del formulario
-formulario.addEventListener("submit", function(event) {
-    event.preventDefault();
-    const nuevaTarea = {
-        id: Date.now(),
-        titulo: titulo.value.trim(),
-        curso: curso.value.trim(),
-        fechaEntrega: fecha.value,
-        completada: false
-    };
-    tareas.push(nuevaTarea);
-    formulario.reset();
-    console.log("Tarea agregada:", nuevaTarea);
+    btnTodos.classList.remove("activo");
+    btnPendientes.classList.remove("activo");
+    btnCompletadas.classList.remove("activo");
+
+    boton.classList.add("activo");
+
+    if (boton === btnTodos) {
+        filtroActual = "todos";
+    } else if (boton === btnPendientes) {
+        filtroActual = "pendientes";
+    } else {
+        filtroActual = "completadas";
+    }
+}
+
+activarFiltro(btnTodos);
+btnTodos.addEventListener("click", function() {
+    activarFiltro(btnTodos);
+    mostrarTareas("todos");
 });
+
+btnPendientes.addEventListener("click", function() {
+    activarFiltro(btnPendientes);
+    mostrarTareas("pendientes");
+});
+
+btnCompletadas.addEventListener("click", function() {
+    activarFiltro(btnCompletadas);
+    mostrarTareas("completadas");
+});
+
