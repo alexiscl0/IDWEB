@@ -124,9 +124,20 @@ fieldset{
     padding: 5px 10px;
 }
 
-.btn-filtro:focus{
+.btn-filtro.activo{
     background: #00E6C5;
     color: white;
     font-weight: bold;
     cursor: pointer;
+}
+
+.alertas{
+    border: 3px solid #0fe7fa;
+    background: linear-gradient(90deg, #0f23fa 0%, #0f85fa 50%, #0fe7fa 100%);
+    border-radius: 15px;
+    color: white;
+    font-family: "Poppins";
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
 }
