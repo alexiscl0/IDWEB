@@ -40,7 +40,7 @@ btnCompletadas.addEventListener("click", function() {
 
 
 // Variables para el formulario y la lista de tareas
-let tareas = [];
+let tareas = JSON.parse(localStorage.getItem("tareas")) || [];
 
 const formulario = document.getElementById("formTarea");
 const titulo = document.getElementById("titulo");
@@ -88,12 +88,15 @@ formulario.addEventListener("submit", function(event) {
 
     tareas.push(nuevaTarea);
 
-    console.log(tareas);
+    guardarTareas();
     mostrarTareas("todos");
     activarFiltro(btnTodos);
     formulario.reset();
 });
 
+function guardarTareas() {
+    localStorage.setItem("tareas", JSON.stringify(tareas));
+}
 
 // Mostrar Tareas
 function mostrarTareas(filtro="todos") {
@@ -134,7 +137,7 @@ function mostrarTareas(filtro="todos") {
         btnEliminar.addEventListener("click", function() {
 
             tareas = tareas.filter(t => t.id !== tarea.id);
-
+            guardarTareas();
             mostrarTareas(filtroActual);
 
         });
@@ -145,6 +148,7 @@ function mostrarTareas(filtro="todos") {
 
             if (tareaEncontrada) {
                 tareaEncontrada.completada = checkbox.checked;
+                guardarTareas();
             }
 
             mostrarTareas(filtroActual);
@@ -157,3 +161,6 @@ function mostrarTareas(filtro="todos") {
     });
 
 }
+
+activarFiltro(btnTodos);
+mostrarTareas("todos");
