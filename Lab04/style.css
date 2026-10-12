@@ -1,0 +1,132 @@
+@font-face {
+    font-family: "Raleway";
+    src: url("Font/Raleway/Raleway-Regular.ttf");
+    font-weight: normal;
+}
+
+@font-face{
+    font-family: "Poppins";
+    src: url("Font/Poppins/Poppins-Regular.ttf");
+    font-weight: normal;
+}
+
+@font-face{
+    font-family: "Poppins";
+    src: url("Font/Poppins/Poppins-Bold.ttf");
+    font-weight: bold;
+}
+
+body{
+    margin: 0;
+}
+
+.hero {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.hero-title{
+    font-size: 30px;
+    color: #205d47;
+    font-family: "Comfortaa";
+    font-size: 50px;
+}
+
+.hero form{
+    border: 2px solid white;
+    box-shadow: 0px 0px 20px 0px #45fbde;
+    border-radius: 50px;
+    padding: 20px;
+
+}
+
+.hero form label{
+    font-family: "Poppins";
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+label[for="fecha"]{
+    grid-column: 1 / 3;
+}
+
+.hero form input{
+    font-family: "Raleway";
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.199);
+}
+
+#titulo, #curso {
+    width: auto;
+    grid-column: 2 / 4;
+}
+
+#fecha {
+    grid-column: 3 / 4;
+    width: 15rem;
+}
+
+.hero fieldset legend{
+    display: flex;
+    align-items: center;
+    grid-column: 1 / 4;
+    font-family: "Poppins";
+    font-weight: bold;
+    font-size: 20px;
+    color: #142622;
+}
+
+#img-agregar{
+    width: 50px;
+    height: 50px;
+}
+
+#img-icon{
+    width: 23px;
+    height: 23px;
+}
+
+fieldset{
+    border: none;
+    box-sizing: border-box;
+    width: 30rem;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 10px;
+}
+
+#btnRegistrarse{
+    grid-column: 1 / 4;
+    justify-self: center;
+    background: linear-gradient(to bottom, #00E6C5, #19c8b6);;
+    color: white;
+    border: none;
+    padding: 10px 100px;
+    border-radius: 10px;
+    font-family: "Poppins";
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btn-filtro{
+    background: white;
+    border: 1px solid #00E6C5;
+    border-radius: 10px;
+    font-family: "Poppins";
+    font-size: 16px;
+    padding: 5px 10px;
+}
+
+.btn-filtro:focus{
+    background: #00E6C5;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
