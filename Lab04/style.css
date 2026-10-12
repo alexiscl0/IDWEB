@@ -115,6 +115,15 @@ fieldset{
     font-weight: bold;
 }
 
+#listaTareas{
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    gap: 20px;
+    margin-top: 5px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
 .btn-filtro{
     background: white;
     border: 1px solid #00E6C5;
