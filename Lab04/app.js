@@ -94,3 +94,66 @@ formulario.addEventListener("submit", function(event) {
     formulario.reset();
 });
 
+
+// Mostrar Tareas
+function mostrarTareas(filtro="todos") {
+
+    listaTareas.innerHTML = "";
+    let tareasFiltradas = tareas;
+
+    if (filtro === "pendientes") {
+        tareasFiltradas = tareas.filter(tarea => tarea.completada === false);
+    }
+
+    if (filtro === "completadas") {
+        tareasFiltradas = tareas.filter(tarea => tarea.completada === true);
+    }
+
+    tareasFiltradas.forEach(function(tarea) {
+
+        const tarjeta = document.createElement("div");
+        tarjeta.classList.add("tarjeta-tarea");
+
+        const nombre = document.createElement("h3");
+        nombre.textContent = tarea.titulo;
+
+        const curso = document.createElement("p");
+        curso.textContent = tarea.curso;
+
+        const fecha = document.createElement("p");
+        fecha.textContent = tarea.fechaEntrega;
+
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.checked = tarea.completada;
+
+        const btnEliminar = document.createElement("button");
+        btnEliminar.textContent = "Eliminar";
+        btnEliminar.classList.add("btn-eliminar");
+
+        btnEliminar.addEventListener("click", function() {
+
+            tareas = tareas.filter(t => t.id !== tarea.id);
+
+            mostrarTareas(filtroActual);
+
+        });
+
+        checkbox.addEventListener("change", function() {
+
+        const tareaEncontrada = tareas.find(t => t.id === tarea.id);
+
+            if (tareaEncontrada) {
+                tareaEncontrada.completada = checkbox.checked;
+            }
+
+            mostrarTareas(filtroActual);
+
+        });
+        tarjeta.append(nombre, curso, fecha, checkbox, btnEliminar);
+
+        listaTareas.appendChild(tarjeta);
+
+    });
+
+}
