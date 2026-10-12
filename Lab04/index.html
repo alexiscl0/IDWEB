@@ -9,7 +9,7 @@
   <body>
     <div class="hero">
       <p class="hero-title">Gestion de Tareas Academicas</p>
-      <form action="">
+      <form action="" id="formTarea">
         <fieldset>
           <legend>
             <img src="icons/agregar.png" id="img-agregar" alt="Nueva tarea" />
@@ -44,15 +44,20 @@
           </label>
           <input type="date" id="fecha" name="fecha" required />
 
-          <input type="submit" id="btnRegistrarse" value="Registrarse" />
+          <input type="submit" id="btnRegistrarse" value="Agregar Tarea" />
         </fieldset>
       </form>
       <div class="alertas"></div>
+      <section class="contenedor-tareas">
+        <h2>Mis tareas</h2>
+        <div id="listaTareas"></div>
+      </section>
       <div class="estado">
         <button class="btn-filtro btnTodos">Todos</button>
         <button class="btn-filtro btnPendientes">Pendientes</button>
         <button class="btn-filtro btnCompletadas">Completadas</button>
       </div>
     </div>
+    <script src="app.js"></script>
   </body>
 </html>
