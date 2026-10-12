@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Tareas</title>
   </head>
   <body>
@@ -10,24 +11,47 @@
       <p class="hero-title">Gestion de Tareas Academicas</p>
       <form action="">
         <fieldset>
-          <legend>Agregar nueva Tarea</legend>
-          <label for="titulo">Titulo:</label>
-          <input type="text" id="titulo" name="titulo" required /><br /><br />
+          <legend>
+            <img src="icons/agregar.png" id="img-agregar" alt="Nueva tarea" />
+            Agregar nueva Tarea
+          </legend>
+          <label for="titulo"
+            ><img
+              src="icons/Titulo.png"
+              id="img-icon"
+              alt="Titulo" />Titulo</label
+          >
+          <input
+            type="text"
+            id="titulo"
+            name="titulo"
+            placeholder="Ejm: Laboratorio"
+            required />
 
-          <label for="curso">Curso:</label>
-          <input type="text" id="curso" name="curso" required /><br /><br />
+          <label for="curso"
+            ><img src="icons/curso.png" id="img-icon" alt="Curso" />Curso</label
+          >
+          <input
+            type="text"
+            id="curso"
+            name="curso"
+            placeholder="Ejm: Estadistica"
+            required />
 
-          <label for="fecha">Fecha de Entrega:</label>
-          <input type="date" id="fecha" name="fecha" required /><br /><br />
+          <label for="fecha"
+            ><img src="icons/fecha.png" id="img-icon" alt="Fecha" />Fecha de
+            Entrega
+          </label>
+          <input type="date" id="fecha" name="fecha" required />
 
-          <input type="submit" value="Registrarse" />
+          <input type="submit" id="btnRegistrarse" value="Registrarse" />
         </fieldset>
       </form>
       <div class="alertas"></div>
       <div class="estado">
-        <button id="btnTodos">Todos</button>
-        <button id="btnPendientes">Pendientes</button>
-        <button id="btnCompletadas">Completadas</button>
+        <button class="btn-filtro btnTodos">Todos</button>
+        <button class="btn-filtro btnPendientes">Pendientes</button>
+        <button class="btn-filtro btnCompletadas">Completadas</button>
       </div>
     </div>
   </body>
