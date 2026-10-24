@@ -1,0 +1,24 @@
+
+### Mostrar todos los cursos
+GET http://localhost:3000/api/v1/curso
+
+### Crear un curso
+POST http://localhost:3000/api/v1/curso
+Content-Type: application/json
+
+{
+  "nombre": "Matemáticas",
+  "creditos": 2,
+  "docente": "Maria"
+}
+
+### Modificar un curso
+PUT http://localhost:3000/api/v1/curso/1
+Content-Type: application/json
+
+{
+  "id": "4"
+  "nombre": "Matemáticas",
+  "creditos": 3,
+  "docente": "Maria"
+}
