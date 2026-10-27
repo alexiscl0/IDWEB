@@ -4,5 +4,17 @@
     "nombre": "IDWEB",
     "creditos": "3",
     "codigo": "Ernesto"
+  },
+  {
+    "id": "2",
+    "nombre": "ADA",
+    "creditos": "4",
+    "codigo": "Lisbet"
+  },
+  {
+    "id": "3",
+    "nombre": "AC",
+    "creditos": "4",
+    "codigo": "Marco"
   }
 ]

@@ -22,3 +22,8 @@ Content-Type: application/json
   "creditos": 3,
   "docente": "9808"
 }
+
+
+### Eliminar un curso
+DELETE http://localhost:3000/api/v1/curso/1
+

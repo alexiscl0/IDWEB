@@ -17,8 +17,8 @@ exports.getAllCurso = (req, res) => {
             (id === undefined ||
                 curso.id.toLowerCase() === id.toLowerCase()) &&
 
-            (docente === undefined ||
-                curso.codigo.toLowerCase() === docente.toLowerCase()) &&
+            (codigo === undefined ||
+                curso.codigo.toLowerCase() === codigo.toLowerCase()) &&
 
             (nombre === undefined ||
                 curso.nombre.toLowerCase().includes(nombre.toLowerCase()))
