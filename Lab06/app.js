@@ -12,7 +12,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/api/v1/curso', cursoRoutes);
+app.use('/api/v1/cursos', cursoRoutes);
 
 app.listen(3000, () => {
     console.log('Servidor ejecutándose en el puerto 3000');

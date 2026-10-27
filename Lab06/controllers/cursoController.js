@@ -2,16 +2,47 @@ const fs = require('fs');
 const path = require('path');
 const cursosFilePath = path.join(__dirname, '../data/cursos.json');
 
+
 exports.getAllCurso = (req, res) => {
     const data = fs.readFileSync(cursosFilePath, 'utf8');
     const cursos = JSON.parse(data);
 
-    res.json(cursos);
+    const { creditos, id, codigo, nombre } = req.query;
+
+    const resultado = cursos.filter(curso => {
+        return (
+            (creditos === undefined ||
+                curso.creditos === Number(creditos)) &&
+
+            (id === undefined ||
+                curso.id.toLowerCase() === id.toLowerCase()) &&
+
+            (docente === undefined ||
+                curso.codigo.toLowerCase() === docente.toLowerCase()) &&
+
+            (nombre === undefined ||
+                curso.nombre.toLowerCase().includes(nombre.toLowerCase()))
+        );
+    });
+
+    if (resultado.length === 0) {
+        return res.status(404).json({
+            mensaje: 'No se encontraron cursos con los filtros especificados'
+        });
+    }
+
+    res.status(200).json(resultado);
 };
 
 exports.createCurso = (req, res) => {
     const data = fs.readFileSync(cursosFilePath, 'utf8'); // Leer el archivo JSON
     const cursos = JSON.parse(data); // Parsear el contenido del archivo JSON a un array de objetos
+
+    if(req.body.nombre != undefined && req.body.creditos && req.body.codigo){
+        return res.status(404).json({
+            mensaje: "Todos los cammpos son Obligatorios (Curso no creado)"
+        })
+    }
 
     const newCurso = { 
         id: cursos.length > 0
@@ -19,7 +50,7 @@ exports.createCurso = (req, res) => {
             : 1,
         nombre: req.body.nombre,
         creditos: req.body.creditos,
-        docente: req.body.docente
+        codigo: req.body.codigo
     };
 
     cursos.push(newCurso); // Agregar el nuevo curso al array de cursos
@@ -36,7 +67,7 @@ exports.updateCurso = (req, res) => {
 
     if (index === -1) {
         return res.status(404).json({
-            mensaje: 'Curso no encontrado'
+            mensaje: 'Curso no encontrado por el id'
         });
     }
 
@@ -44,7 +75,7 @@ exports.updateCurso = (req, res) => {
         id: id,
         nombre: req.body.nombre,
         creditos: req.body.creditos,
-        docente: req.body.docente
+        codigo: req.body.codigo
     };
 
     fs.writeFileSync(
