@@ -3,18 +3,18 @@
     "id": "1",
     "nombre": "IDWEB",
     "creditos": "3",
-    "codigo": "Ernesto"
-  },
-  {
-    "id": "2",
-    "nombre": "ADA",
-    "creditos": "4",
-    "codigo": "Lisbet"
+    "codigo": "6789"
   },
   {
     "id": "3",
     "nombre": "AC",
     "creditos": "4",
-    "codigo": "Marco"
+    "codigo": "3401"
+  },
+  {
+    "id": 4,
+    "nombre": "Matemáticas",
+    "creditos": 4,
+    "codigo": "2025"
   }
 ]
