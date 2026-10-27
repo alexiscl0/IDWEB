@@ -85,3 +85,30 @@ exports.updateCurso = (req, res) => {
 
     res.json(cursos[index]);fs.readFileSync(cursosFilePath, 'utf8')
 };
+
+
+exports.deleteCurso = (req, res) => {
+    const data = fs.readFileSync(cursosFilePath, 'utf8');
+    const cursos = JSON.parse(data);
+
+    const id = parseInt(req.params.id);
+    const index = cursos.findIndex(curso => curso.id === id);
+
+    if (index === -1) {
+        return res.status(404).json({
+            mensaje: 'Curso no encontrado'
+        });
+    }
+
+    const cursoEliminado = cursos.splice(index, 1)[0];
+
+    fs.writeFileSync(
+        cursosFilePath,
+        JSON.stringify(cursos, null, 2)
+    );
+
+    res.status(200).json({
+        mensaje: 'Curso eliminado correctamente',
+        curso: cursoEliminado
+    });
+};
