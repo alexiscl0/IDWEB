@@ -122,3 +122,20 @@ function authMiddleware(req, res, next) {
     }
     next();
 }
+
+app.get('/api/perfil', authMiddleware, (req, res) => {
+    const user = users.find(
+        user => user.id === req.session.userId
+    );
+
+    if (!user) {
+        return res.status(404).json({
+            message: 'Usuario no encontrado.'
+        });
+    }
+
+    res.json({
+        id: user.id,
+        email: user.email
+    });
+});
