@@ -139,3 +139,19 @@ app.get('/api/perfil', authMiddleware, (req, res) => {
         email: user.email
     });
 });
+
+app.post('/api/auth/logout', (req, res) => {
+    req.session.destroy((err) => {
+        if (err) {
+            return res.status(500).json({
+                message: 'Error al cerrar sesión.'
+            });
+        }
+
+        res.clearCookie('connect.sid');
+
+        res.json({
+            message: 'Sesión cerrada correctamente.'
+        });
+    });
+});
