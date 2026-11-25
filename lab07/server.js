@@ -72,3 +72,44 @@ app.post('/api/auth/register', async (req, res) => {
         });
     }
 });
+app.post('/api/auth/login', async (req, res) => {
+    try {
+        const { email, password } = req.body;
+
+        const user = users.find(
+            user => user.email === email
+        );
+
+        if (!user) {
+            return res.status(401).json({
+                message: 'Credenciales incorrectas.'
+            });
+        }
+
+        const passwordCorrect = await bcrypt.compare(
+            password,
+            user.password
+        );
+
+        if (!passwordCorrect) {
+            return res.status(401).json({
+                message: 'Credenciales incorrectas.'
+            });
+        }
+
+        req.session.userId = user.id;
+
+        res.json({
+            message: 'Inicio de sesión exitoso.',
+            user: {
+                id: user.id,
+                email: user.email
+            }
+        });
+
+    } catch (error) {
+        res.status(500).json({
+            message: 'Error al iniciar sesión.'
+        });
+    }
+});
